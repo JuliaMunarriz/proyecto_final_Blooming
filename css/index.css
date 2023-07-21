@@ -69,10 +69,24 @@ img, video, iframe{
     --c-brand: rgb(128, 203, 196); /* color principal de la pagina y la app*/
     /*tipografias*/
     --f-main: 'conforta' 'montserrat';
+    --f-size-titulos: 1.2rem; /*tamaño de la tipografia de los titulos*/
 
 }
 
 /* Header................................................................*/
+/*En el header se encuentra el encabezado de la web, en este encabezado hay un navegador con acceso a otras paginas como
+contactar o saber más sobre la creación de la aplicación. El estilo de esta parte es sencillo y amigable para el usuario.
+sigue la siguiente estructura:
+        -header
+        -header-wrapper
+        -header-menu
+        -header-nav
+        -header-svg (icono al hacer responsive)
+        -header-ul
+        -header-li
+        -header-a (enlaces a las paginas)
+        -header-button*/
+
 .header{
     width: 100%;
     padding: .5rem 0rem;
@@ -90,14 +104,15 @@ img, video, iframe{
     align-items: center;
 
 }
-.header-menu{
+.header-menu{  /*Este selector hace que no se vea el svg al tener la pagina en un tamañp estandar de pantalla
+    pero que al hacer responsive este simplifique otros botones y facilite la interacción y visualización*/
 /*background-color: aquamarine;*/
 display: none;
 }
 .header-svg{
     width: 2rem ;
     height: 2rem;
-    transition: all .4s ease;
+    transition: all .4s ease; /* transición que suaviza el efecto de cambio de color al posicionarnos sobre él */
 }
 
 .header-svg:hover{
@@ -122,6 +137,8 @@ display: none;
     position: relative;
 
 }
+/* este pseudo-selector hace que al posicionarnos sobre el elemento aparezca una fina linea que crece en un periodo de 0.5s
+esto se ha podido realizar con un transition*/
 .header-a::after{
     content:"";
     position: absolute;
@@ -147,7 +164,7 @@ display: none;
     padding: .1rem .8rem;
     border: .1rem var(--c-texto-principal) solid;
     border-radius: 2rem ;
-    transition: all .4s ease;
+    transition: all .4s ease; /* efecto para suavizar la transición de la etiqueta cuando nos posicionamos encima*/
 }
 
 
@@ -169,12 +186,30 @@ display: none;
 
 }
 
-/*Sección 1...................................................*/
+/*Sección 1...................................................
+Descripción: Sección con la descripcción general de la aplicación presentada,
+        el logo, mockup de como se visualizaria en un smartphone y el acceso a la aplicación
+        desde diferentes plataformas. Esta sección tiene un estilo basado en muchas landing page con un contraste de fondo para resaltar
+        los elementos principales.
+        Sigue la siguiente estructura:
+            -app
+            -app-wrapper
+                -app-h1
+                -app-logo
+                -app-h2
+                -app-info
+                -app-compra
+                    -img-goAppStore
+                    -img-goGoogleStore
+                -app-mockup
+                    img-mockup
+
+        */
 
 .app{
     width:100%;
 
-    background-image: url("../assets/seccion_1/fondo_seccion_1.png");
+    background-image: url("../assets/seccion_1/fondo_seccion_1.png"); /*fondo de contraste para darle dimension a la pagina*/
     background-repeat: no-repeat;
 
     min-height: 140vh;
@@ -201,6 +236,8 @@ display: none;
 
 
 }
+
+/*pseudo-elemento para crear una pueña linea detras del titulo, que haga de separadora*/
 .app-h2::after{
     content:"";
     position: absolute;
@@ -253,9 +290,7 @@ display: none;
     right: 0;
 
 }
-.img-mockup{
-
-}
+.img-mockup{}
 
 @media (max-width:760px) {
     .img-mockup{
@@ -275,7 +310,19 @@ display: none;
 
 
 }
-/*Sección 2.....................................................................*/
+/*Sección 2.....................................................................
+ Descripción: Sección con las interfaces que entran en juego en el uso de la aplicación (smartwatch, portatil y smartphone
+ estas estan dispuestas en linea y aparecen de abajo a arriba con un efecto de scroll
+ Sigue la siguiente estructura:
+        -interfaces
+        -interfaces-titulo
+        -interfaces-wrapper
+            -interfaz
+            -interfaz-img
+                -interfaz-smartwatch
+                -interfaz-laptop
+                -interfaz-smartphone
+            -interfaz-nombre*/
 
 .interfaces{
     width: 100%;
@@ -286,12 +333,13 @@ display: none;
  /*background-color: rgb(60, 74, 74);*/
  text-transform: none;
  text-align: center;
- font-size: 1.2rem;
+ font-size: var(--f-size-titulos);
  padding-top: 2rem ;
  font-weight: 500;
  color: black;
  position:relative;
 }
+/*pseudo-elemento para crear una pueña linea detras del titulo, que haga de separadora*/
 .interfaces-titulo::after{
     content:"";
     position: absolute;
@@ -327,6 +375,8 @@ display: none;
     border-radius: 2rem;
 
 }
+/*se creo una clase llamada "animado" para crear una animación en la que los elementos aparezcan de abajo a arriba al
+hacer scorll*/
 .animado{
     opacity: 0;
     transition:all 0.5s;
@@ -386,7 +436,26 @@ display: none;
     }
 
 }
-/*sección3..............................................................*/
+/*sección3..............................................................
+Descripción: Sección con todas las funciones que tiene la aplicación junto a una pequeña descripción de las
+        mismas. Todas ellas tendrán un enlace a una explicaión más detallada (no creada). También cuenta con una imagen
+        de fondo en la que se ve la interfaz de una pantalla con las funciones disponibles.
+
+    Sigue la siguiente estructura:
+            -funciones
+            -funciones-titulo
+            -funciones-subtitulo
+            -funciones-wrapper
+            -funcion
+            -funcion-h4
+            -funcion-a
+            -funcion-info
+            -funcion-access
+                -funcion-button
+                -funcion-getApp
+                -funcion-link
+                -funcion-infoApp
+                */
 
 .funciones{
     width: 100%;
@@ -407,13 +476,14 @@ display: none;
 .funciones-titulo{
     /*background-color: aqua;*/
     text-align: center;
-    font-size: 1.2rem;
+    font-size: var(--f-size-titulos);
     padding-top: 2rem;
     font-weight: 500;
     color: black;
 
     position: relative;
 }
+/*pseudo-elemento con pequeña linea separadora entre el titulo y subtitulo*/
 .funciones-titulo::after{
     content:"";
     position: absolute;
@@ -458,6 +528,8 @@ display: none;
     position: relative;
 }
 
+/*Efecto con pseudo-elemento para que al posicionarnos sobre algunas de las funciones, aparezca una linea larga indicativa
+de un enlace a otra pagina con más información sobre esa funcion)*/
 .funcion-a::after{
     content:"";
     position: absolute;
@@ -509,7 +581,7 @@ display: none;
     padding: .1rem .8rem;
     border: .1rem  solid var(--c-brand);
     border-radius: 2rem ;
-    transition: all .4s ease;
+    transition: all .4s ease; /* Efecto para suavizar la transicion de color al posicionarnos sobre el boton y neomorfismo con las sombras*/
     box-shadow:  11px 11px 22px #adadad,
                 -11px -11px 22px #ffffff;
 
@@ -579,12 +651,22 @@ display: none;
 
     }
 }
-/*seccion intermedia carrusel.....................................................................*/
+/*seccion 4-carrusel.....................................................................
+Descripción: Carrusel con las diferentes pantallas disponibles en la aplicación a modo de ejemplo para el usuario
+Este carrusel es sencillo, muestra los mockUps con las pantallas clicando sobre los puntos inferiores a él.
+Sigue la siguiente estructura:
+    -carrusel-titulo
+    -carrusel-container
+    -carrusel
+    -carrusel-grande
+    -carrusel-img
+    -carrusel-puntos
+    -carrusel-punto*/
 .carrusel-titulo{
     padding-top: 2rem;
     width: 100%;
    /* background-color: aqua;*/
-    font-size: 1.2rem;
+    font-size: var(--f-size-titulos);
     color: black;
     text-align: center;
 
@@ -615,8 +697,8 @@ display: none;
     justify-content: space-between;
     align-items:center;
 
-    transition: all .5s ease;
-    transform: translateX(0%);
+    transition: all .5s ease;/*tansicion para suavizar el desplazamiento de una imagen a otra*/
+    transform: translateX(0%); /*simplemente para porobar si el desplazamiento era correcto*/
 
 
 }
@@ -649,6 +731,8 @@ display: none;
     color: var(--c-brand);
 }
 
+/*esta clase se ha creado para poder realizar este tipo de slider con JavaScript  y que al cambiar de imagen cambie el color del punto
+en el que se encontraría posicionada la imagen*/
 .activo{
     background-color: var(--c-brand);
 }
@@ -664,7 +748,25 @@ display: none;
     }
 }
 
-/* sección4.................................................................................*/
+/* sección 5.................................................................................
+ Descripción: sección con la explicación de las funcionalidades de la aplicacion en un smartwatch como interfaz.
+Igualmente cuenta con una imagen mockup de su interfaz
+    Sigue la siguiente estructura:
+            -smartwatch
+            -Smartwatch-wrapper
+            -Smartwatch-main
+            -Smartwatch-h2
+            -Smartwatch-h4
+            -Smartwatch-img
+            -Smartwatch-infos
+                 -Smartwatch-infos-wrapper
+                 -Smartwatch-info
+             -Smartwatch-access
+             -smartwatch-button
+             -smartwatch-getApp
+             -smartwatch-link
+             -smartwatch-infoApp
+    */
 
 .smartwatch{
   /* background-color: blueviolet;*/
@@ -776,11 +878,11 @@ display: none;
     padding: .1rem .8rem;
     border: .1rem  solid var(--c-brand);
 
-    transition: all .4s ease;
+    transition: all .4s ease; /*efecto para suavizar el contraste al posicionarnos sobre el boton*/
     border-radius: 2rem;
 
 
- box-shadow:  11px 11px 22px #adadad,
+ box-shadow:  11px 11px 22px #adadad,/*Sombras con efecto de neomorfismo*/
              -11px -11px 22px #ffffff;
 }
 .smartwatch-link{}
@@ -878,7 +980,26 @@ display: none;
 
 
 
-/*Sección 5...................................................................................................*/
+/*Sección 6...................................................................................................
+ Descripción: sección con la explicación de las funcionalidades de la aplicacion en un ordenador portatil como interfaz.
+Igualmente cuenta con una imagen mockup de su interfaz
+         Sigue la siguiente estructura:
+            -laptop
+            -laptop-wrapper
+            -laptop-main
+            -laptop-h2
+            -laptop-h4
+            -laptop-img
+            -Slaptop-infos
+                 -laptop-infos-wrapper
+                 -laptop-info
+             -laptop-access
+             -laptop-button
+             -laptop-getApp
+             -laptop-link
+             -laptop-infoApp
+
+        */
 
 .laptop{
     /*background-color: rgb(181, 213, 178);*/
@@ -970,17 +1091,17 @@ display: none;
 .laptop-button{
 }
 .laptop-getApp{
-    color: rgb(128, 203, 196);
+    color: var(--c-brand);
     padding: .1rem .8rem;
-    border: .1rem  solid rgb(128, 203, 196);
+    border: .1rem  solid var(--c-brand);
     border-radius: 2rem ;
-    transition: all .4s ease;
-    box-shadow:  11px 11px 22px #adadad,
+    transition: all .4s ease;/*efecto para suavizar el contraste al posicionarnos sobre el boton*/
+    box-shadow:  11px 11px 22px #adadad,/*efecto de sombras con neomorfismo*/
              -11px -11px 22px #ffffff;
 }
 .laptop-link{}
 .laptop-infoApp{
-    color:rgb(128, 203, 196);
+    color:var(--c-brand);
 }
 .laptop-getApp:hover{
     background-color:rgb(33, 179, 159)  ;
@@ -1059,10 +1180,26 @@ display: none;
 
 
 }
-/*Footer..........................................................................................................*/
+/*Footer..........................................................................................................
+ Descripción: Footer, pie de pagina con el logo de la aplicación y los servicios extras que ofrece (politica de privacidad, contacto...)
+        También cuenta con el enlace a las diferetnes redes sociales en las que se encuentra
+    Sigue la siguiente estructura:
+            -footer
+            -footer-wrapper
+            -footer-logo
+            -footer-img
+            -footer-h6
+            -footer-copy
+            -footer-ul
+                -footer-li
+                -footer-a
+            -footer-last
+            -footer-rrss
+            -footer-rs
+            -footer-icons*/
 
 .footer{
-    background-color: rgb(128, 203, 196);
+    background-color: var(--c-brand);
 }
 .footer-wrapper{
    /* background-color: aqua;*/
