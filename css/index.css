@@ -1,3 +1,10 @@
+/*Comentarios
+Estructura del css:
+        1.Reset
+        2.variables
+        3. Header
+        4. Main (sección 1-6)
+        5. Footer*/
 
 /*Reset*/
 *{
@@ -54,11 +61,22 @@ img, video, iframe{
     width: 100%;
     display: block;
 }
+/*variables..............................................................................*/
+
+:root{
+    /*colores*/
+    --c-texto-principal: rgb(255,255,255); /*color del texto principal de la web*/
+    --c-brand: rgb(128, 203, 196); /* color principal de la pagina y la app*/
+    /*tipografias*/
+    --f-main: 'conforta' 'montserrat';
+
+}
+
 /* Header................................................................*/
 .header{
     width: 100%;
     padding: .5rem 0rem;
-    background-color: rgb(128, 203, 196);
+    background-color: var(--c-brand);
 }
 .header-wrapper{
     width: 90%;
@@ -113,7 +131,7 @@ display: none;
     height: 7%;
     left:0;
     bottom: 10%;
-    background-color: whitesmoke;
+    background-color: var(--c-texto-principal);
     transition: all .5s ease;
 
 
@@ -127,14 +145,14 @@ display: none;
 
 .header-button{
     padding: .1rem .8rem;
-    border: .1rem white solid;
+    border: .1rem var(--c-texto-principal) solid;
     border-radius: 2rem ;
     transition: all .4s ease;
 }
 
 
 .header-button:hover{
-    background-color: whitesmoke;
+    background-color: var(--c-texto-principal);
     color:rgb(33, 179, 159)  ;
 }
 
@@ -191,7 +209,7 @@ display: none;
     height: 5%;
     left: 40%;
     bottom: -20%;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--c-texto-principal);
 
 
 }
@@ -469,7 +487,7 @@ display: none;
 .funcion-access{
     width: 35%;
    /* background-color: blue;*/
-    color: rgb(128, 203, 196);;
+    color: var(--c-brand);
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -487,9 +505,9 @@ display: none;
 
 }
 .funcion-getApp{
-    color: rgb(128, 203, 196);
+    color: var(--c-brand);
     padding: .1rem .8rem;
-    border: .1rem  solid rgb(128, 203, 196);
+    border: .1rem  solid var(--c-brand);
     border-radius: 2rem ;
     transition: all .4s ease;
     box-shadow:  11px 11px 22px #adadad,
@@ -628,11 +646,11 @@ display: none;
     background-color: #bba085;
     margin: 1rem;
     border-radius: 100%;
-    color: rgb(159, 221, 207);
+    color: var(--c-brand);
 }
 
 .activo{
-    background-color: rgb(128, 203, 196);
+    background-color: var(--c-brand);
 }
 
 @media (max-width:900px) {
@@ -754,9 +772,9 @@ display: none;
 .smartwatch-button{
 }
 .smartwatch-getApp{
-    color: rgb(128, 203, 196);
+    color: var(--c-brand);
     padding: .1rem .8rem;
-    border: .1rem  solid rgb(128, 203, 196);
+    border: .1rem  solid var(--c-brand);
 
     transition: all .4s ease;
     border-radius: 2rem;
@@ -767,14 +785,14 @@ display: none;
 }
 .smartwatch-link{}
 .smartwatch-infoApp{
-    color: rgb(128, 203, 196);
+    color: var(--c-brand);
 
 }
 
 
 .smartwatch-getApp:hover{
     background-color:rgb(33, 179, 159)  ;
-    color:whitesmoke;
+    color:var(--c-texto-principal);
 }
 @media (max-width:960px) {
     .smartwatch-img{
@@ -918,22 +936,7 @@ display: none;
 
     gap: 1rem;
 }
-.animacion{
-    opacity: 1;
-    transition:all 0.5s;
-}
-.haciaArriba{
-    animation : haciaArriba 1s;
-}
 
-@keyframes haciaArriba{
-    0%{
-        transform: translateY(50%)
-    }
-    100%{
-        transform: translateY(0);
-    }
-}
 .laptop-info{
    /* background-color: lightgreen;*/
     line-height: 1.5rem;
