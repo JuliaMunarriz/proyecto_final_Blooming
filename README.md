@@ -8,7 +8,7 @@ Tras el estudio y proceso de trabajo seguido se ha encontrado una solución adap
 
 ## Acceso a la pagina wev en directo
 
-https://juliamunarriz.github.ioproyecto_final_Blooming/
+https://juliamunarriz.github.io/proyecto_final_Blooming/
 
 ## Tecnologías y metodologías empleadas
 
