@@ -209,7 +209,7 @@ Descripción: Sección con la descripcción general de la aplicación presentada
 .app{
     width:100%;
 
-    background-image: url("../assets/seccion_1/fondo_seccion_1.png"); /*fondo de contraste para darle dimension a la pagina*/
+    background-image: url("../assets/seccion_app/fondo_seccion_1.png"); /*fondo de contraste para darle dimension a la pagina*/
     background-repeat: no-repeat;
 
     min-height: 140vh;
@@ -461,7 +461,7 @@ Descripción: Sección con todas las funciones que tiene la aplicación junto a 
     width: 100%;
     background-color: rgb(229, 229, 229);
 
-    background-image: url("../assets/seccion_3/mockup_smartphone.png");
+    background-image: url("../assets/seccion_funciones/mockup_smartphone.png");
     background-size: 65%;
     background-repeat: no-repeat;
     background-position: 60% bottom;
